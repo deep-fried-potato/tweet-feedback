@@ -62,12 +62,10 @@ newFeedback.save((err,result)=>{
           })
         })
     })
-
-
   }
 })
-
 })
-
-router.post('/')
+router.get("/stop",(req,res)=>{
+  res.render("stop.twig")
+})
 module.exports = router
