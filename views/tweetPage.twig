@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Tweet Feedback</h1>
+    <h3>Welcome {{workerid}}</h3>
+      {%if tweet=="" %} Sorry, there are no more tweets
+      {%else%}
+      {{tweet.tweettext}}<br>
+    <h4>Select your feedback</h4>
+    <form action="/feedback" method="post">
+      <input type="hidden" name="workerid" value="{{workerid}}">
+      <input type="hidden" name="tweetid" value="{{tweet.id}}">
+      <select class="" name="reaction">
+        <option value="Positive">Positive</option>
+        <option value="Neutral">Neutral</option>
+        <option value="Negative">Negative</option>
+      </select>
+      <input type="submit" name="Submit" value="Submit">
+    </form>
+    {%endif%}
+  </body>
+</html>
